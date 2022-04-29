@@ -1,7 +1,9 @@
+import { Title } from './index';
+
 const Article = (props) => {
   return (
     <div>
-      <h2>{props.title}</h2>
+      <Title title={props.title} />
       <h2>{props.content}</h2>
     </div>
   );
