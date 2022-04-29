@@ -10,13 +10,12 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setName(data.name);
-      })
-      .catch((e) => console.log('ERROR'));
+    (async () => {
+      const res = await fetch(`https://api.github.com/users/${id}`);
+      const json = await res.json();
+      console.log(json);
+      setName(json.name);
+    })();
   }, [id]);
 
   return (
