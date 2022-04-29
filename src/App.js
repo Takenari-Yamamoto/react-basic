@@ -1,10 +1,11 @@
-import { Article, TextInput } from './components';
+import { Article, TextInput, Counter } from './components';
 
 function App() {
   return (
     <div>
       <TextInput />
       <Article title={'TITLEです'} content={'コンテンツです'} />
+      <Counter />
     </div>
   );
 }
