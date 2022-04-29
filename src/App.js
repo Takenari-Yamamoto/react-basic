@@ -1,11 +1,12 @@
-import { Article, TextInput, Counter } from './components';
+import { Article, TextInput, Counter, ToggleButton } from './components';
 
 function App() {
   return (
     <div>
-      <TextInput />
+      {/* <TextInput />
       <Article title={'TITLEです'} content={'コンテンツです'} />
-      <Counter />
+      <Counter /> */}
+      <ToggleButton />
     </div>
   );
 }
