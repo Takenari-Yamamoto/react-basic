@@ -6,7 +6,6 @@ const Article = (props) => {
   const publishArticle = () => {
     setIsPublished(true);
   };
-
   return (
     <div>
       <Title title={props.title} />
