@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Title } from './components/Title';
+import { InputForm } from './components/InputForm';
+import { TodoList } from './components/TodoList';
 
 function App() {
-  const [name, setName] = useState('');
-  const [id, setId] = useState('Takenari-Yamamoto');
-  const ids = ['aws', 'google', 'facebook', 'Takenari-Yamamoto'];
-  const getRandomId = () => {
-    const _id = ids[Math.floor(Math.random() * ids.length)];
-    setId(_id);
-  };
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch(`https://api.github.com/users/${id}`);
-      const json = await res.json();
-      console.log(json);
-      setName(json.name);
-    })();
-  }, [id]);
+  const [taskList, setTaskList] = useState([]);
 
   return (
-    <div>
-      <p>GitHub </p>
-      <p>NAME: {name}</p>
-      <button onClick={getRandomId}>ID を変更</button>
+    <div className="body">
+      <Title />
+      <InputForm taskList={taskList} setTaskList={setTaskList} />
+      <TodoList taskList={taskList} setTaskList={setTaskList} />
     </div>
   );
 }
